@@ -11,7 +11,7 @@ services:
       dockerfile: ./compose/local/django/Dockerfile
     image: vct_local_django
     container_name: vct_local_django
-    platform: linux/x86_64
+    # platform: linux/x86_64
     depends_on:
       - postgres
       - redis
@@ -21,7 +21,7 @@ services:
       - ./.envs/.local/.django
       - ./.envs/.local/.postgres
     ports:
-      - "8000:8000"
+      - "8003:8000"
     command: /start
 
   postgres:
@@ -39,7 +39,7 @@ services:
   docs:
     image: vct_local_docs
     container_name: vct_local_docs
-    platform: linux/x86_64
+    # platform: linux/x86_64
     build:
       context: .
       dockerfile: ./compose/local/docs/Dockerfile
