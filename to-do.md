@@ -1,7 +1,3 @@
-## in Progress
-
-- [ ] Make English default language
-
 ## Done
 
 - [x] Speech recognition script
@@ -11,3 +7,5 @@
 - [x] Convert Recorded Audio To Text
 
 - [x] Remove Noises
+
+- [x] Make English default language
