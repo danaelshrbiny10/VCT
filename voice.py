@@ -80,7 +80,7 @@ def main():
 
         # Convert Recorded Audio To Text
         sound = "recordAudio/recordAudio.wav"
-        with sr.AudioFile() as source:
+        with sr.AudioFile(sound) as source:
             r.adjust_for_ambient_noise(source)
 
             print("Converting Audio To Text ..... ")
