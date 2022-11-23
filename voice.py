@@ -46,31 +46,31 @@ Translate()
 import speech_recognition as sr
 
 def main():
- 
+
     r = sr.Recognizer()
-    
+
     # for microphone users
     with sr.Microphone() as source:
         r.adjust_for_ambient_noise(source)
- 
+
         print("Please say something")
- 
+
         audio = r.listen(source)
- 
+
         print("Recognizing Now .... ")
- 
- 
+
+
         # recognize speech using google
         try:
             print("You have said \n" + r.recognize_google(audio))
             print("Audio Recorded Successfully \n ")
- 
- 
+
+
         except Exception as e:
             print("Error :  " + str(e))
- 
- 
- 
+
+
+
         # record audio
         sound = "recordAudio/recordAudio.wav"
         with open(sound, "wb") as f:
@@ -79,21 +79,20 @@ def main():
 
 
         # Convert Recorded Audio To Text
-        sound = "recordAudio/recordAudio.wav"
         with sr.AudioFile(sound) as source:
             r.adjust_for_ambient_noise(source)
 
             print("Converting Audio To Text ..... ")
 
             audio = r.listen(source)
-
-        
         try:
-            print("Converted Audio Is : \n" + r.recognize_google(audio))
-
-    
+            stt = r.recognize_google(audio)
+            print("Converted Audio Is : \n" + stt)
+            text = "recordtext/recordAudio.txt"
+            with open(text, "w") as text_file:
+                text_file.write(stt)
         except Exception as e:
-            print("Error {} : ".format(e) )
+            print("Error {} : ".format(e))
 
 
 
