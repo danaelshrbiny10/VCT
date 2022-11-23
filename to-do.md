@@ -1,20 +1,13 @@
-## to-do list
-
-- [ ] Make English default language
-
-- [ ] Remove Noises
-
-  
-  
-
 ## in Progress
 
-- [ ] Convert Recorded Audio To Text
-
-  
+- [ ] Make English default language
 
 ## Done
 
 - [x] Speech recognition script
 
 - [x] record audio
+
+- [x] Convert Recorded Audio To Text
+
+- [x] Remove Noises
